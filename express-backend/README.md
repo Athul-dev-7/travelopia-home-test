@@ -48,4 +48,4 @@ Use `env.example` files for creating local .env files
 
 ### 5. Run the Server
 
-`npx nodemon start`
+`npm start`
