@@ -3,9 +3,22 @@ const router = express.Router();
 const models = require('../models');
 const { body, validationResult } = require('express-validator');
 
-/* GET users listing. */
+/* GET all bookings. */
+router.get('/list', async function (req, res) {
+    try {
+        const bookings = await models.Booking.findAll();
+        return res.status(200).json({
+            message: 'success',
+            data: bookings,
+        });
+    } catch (error) {
+        return res.status(500).json({ error: `${error.message}` });
+    }
+});
+
+/* POST a booking. */
 router.post(
-    '/createBooking',
+    '/create',
     body('firstName').custom((value) => {
         let regex = /^[a-zA-Z]+$/;
         if (!regex.test(value)) {
@@ -46,18 +59,36 @@ router.post(
         .contains('$')
         .withMessage('The currency should be in dollars'),
     async function (req, res) {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                success: false,
-                errors: errors.array(),
-            });
-        }
+        try {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                return res.status(400).json({
+                    success: false,
+                    errors: errors.array(),
+                });
+            }
 
-        res.status(200).json({
-            success: true,
-            message: 'User created successful',
-        });
+            const booking = await models.Booking.create({
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                email: req.body.email,
+                countryToVisit: req.body.countryToVisit,
+                numberOfTravellers: req.body.numberOfTravellers,
+                budgetPerPerson: req.body.budgetPerPerson,
+            });
+
+            if (booking) {
+                return res
+                    .status(200)
+                    .json({ message: 'success', data: booking });
+            } else {
+                return res
+                    .status(400)
+                    .json({ message: 'some thing went wrong' });
+            }
+        } catch (error) {
+            return res.status(500).json({ error: `${error.message}` });
+        }
     }
 );
 
