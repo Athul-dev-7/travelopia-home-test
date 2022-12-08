@@ -1,0 +1,65 @@
+{
+    "tables": {
+        "Bookings": {
+            "tableName": "Bookings",
+            "schema": {
+                "uuid": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.UUIDV4"
+                    },
+                    "unique": true,
+                    "primaryKey": true,
+                    "field": "uuid",
+                    "seqType": "Sequelize.UUID"
+                },
+                "firstName": {
+                    "allowNull": false,
+                    "field": "firstName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "lastName": {
+                    "allowNull": false,
+                    "field": "lastName",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "validate": {
+                        "isEmail": true
+                    },
+                    "unique": true,
+                    "allowNull": false,
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "countryToVisit": {
+                    "allowNull": false,
+                    "field": "countryToVisit",
+                    "seqType": "Sequelize.STRING"
+                },
+                "numberOfTravellers": {
+                    "allowNull": false,
+                    "field": "numberOfTravellers",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "budgetPerPerson": {
+                    "allowNull": false,
+                    "field": "budgetPerPerson",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
