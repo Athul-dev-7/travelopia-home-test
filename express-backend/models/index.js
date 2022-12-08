@@ -8,7 +8,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const db = require('../models');
 let sequelize;
-sequelize = new Sequelize(process.env.DATABASE_URL, { logging: false });
+sequelize = new Sequelize(process.env.DATABASE_URL, { logging: true });
 
 fs.readdirSync(__dirname)
     .filter((file) => {
