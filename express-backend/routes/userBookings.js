@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 
 /* GET users listing. */
 router.post(
-    '/createUser',
+    '/createBooking',
     body('firstName').custom((value) => {
         let regex = /^[a-zA-Z]+$/;
         if (!regex.test(value)) {
