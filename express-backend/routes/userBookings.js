@@ -60,6 +60,7 @@ router.post(
         .withMessage('The currency should be in dollars'),
     async function (req, res) {
         try {
+            // console.log(req.body);
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
                 return res.status(400).json({
@@ -79,7 +80,7 @@ router.post(
 
             if (booking) {
                 return res
-                    .status(200)
+                    .status(201)
                     .json({ message: 'success', data: booking });
             } else {
                 return res
