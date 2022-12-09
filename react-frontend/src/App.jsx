@@ -1,11 +1,21 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Form from './pages/bookingForm/bookingForm';
+import Bookings from './pages/bookingList/bookingsList';
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <h1>First Page</h1>
+        <div className="app">
+            <BrowserRouter>
+                <Routes>
+                    <Route>
+                        <Route index path="/" element={<Form />} />
+                        <Route path="/bookings" element={<Bookings />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </div>
     );
-}
+};
 
 export default App;
