@@ -49,3 +49,7 @@ Use `env.example` files for creating local .env files
 ### 5. Run the Server
 
 `npm start`
+
+### 6. Run tests
+
+`npm run test`
