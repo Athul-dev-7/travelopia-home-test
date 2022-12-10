@@ -1,12 +1,14 @@
 .table-container {
-    height: 200px;
+    height: 33rem;
     overflow-y: scroll;
+    width: -webkit-fill-available;
 }
 
 thead {
     position: sticky;
     top: 0;
     background: #edd1d1;
+    height: 3rem;
 }
 
 thead tr th {
