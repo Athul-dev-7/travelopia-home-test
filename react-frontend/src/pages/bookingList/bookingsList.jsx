@@ -14,8 +14,8 @@ const BookingsList = () => {
     }, []);
 
     return (
-        <div className={styles.container}>
-            <h1>Booking List</h1>
+        <div className="container">
+            <h1 className="title">Booking List</h1>
             <div className={styles['table-container']}>
                 <table>
                     <thead>

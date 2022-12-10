@@ -42,8 +42,8 @@ const BookingForm = () => {
     };
 
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>Booking Form</h1>
+        <div className="container">
+            <h1 className="title">Booking Form</h1>
             <form onSubmit={submitHandler} className={styles.form}>
                 <div className={styles['control-group']}>
                     <div className={styles['form-control']}>
@@ -112,6 +112,7 @@ const BookingForm = () => {
                             type="text"
                             name="budget"
                             id="budget"
+                            placeholder="$1000"
                             required
                         />
                     </div>
