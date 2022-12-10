@@ -4,8 +4,24 @@
     align-items: center;
 }
 
+.table-container {
+    height: 200px;
+    overflow-y: scroll;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background: #edd1d1;
+
+}
+
 thead tr th {
     width: 15rem;
+}
+
+td {
+    text-align: center;
 }
 
 table,

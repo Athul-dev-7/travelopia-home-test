@@ -72,11 +72,22 @@ button:disabled:active {
     cursor: not-allowed;
 }
 
-h2 {
+.title {
     text-align: center;
     margin-bottom: 3rem;
 }
 
 .link {
-    padding: 2rem;
+    padding: 1.5rem 0rem;
+}
+
+.success-text {
+    color: green;
+    margin-top: 3rem;
+}
+
+.error-text {
+    color: red;
+    margin-top: 3rem;
+
 }

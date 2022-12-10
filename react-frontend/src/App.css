@@ -1,8 +1,9 @@
 .app {
   width: 100vw;
   max-width: max-content;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 12px;
   background-color: white;
-  margin: 3rem auto;
+  margin: 15rem auto;
+
 }
