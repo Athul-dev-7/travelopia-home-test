@@ -22,8 +22,7 @@ const BookingForm = () => {
             numberOfTravellers: parseInt(numberOfTravellersRef.current.value),
             budgetPerPerson: budgetPerPersonRef.current.value,
         };
-        console.log({ ...enteredValues });
-        console.log(enteredValues);
+
         bookJourney({ ...enteredValues }).then((resp) => {
             if (resp.status === 201) {
                 console.log(resp);
