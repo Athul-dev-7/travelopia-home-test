@@ -89,19 +89,15 @@ const BookingForm = () => {
                         />
                     </div>
                     <div className={styles['form-control']}>
-                        <label htmlFor="">Budget Per Person</label>
-                        <select
+                        <label htmlFor="budget">
+                            Budget Per Person (In Dollar)
+                        </label>
+                        <input
                             ref={budgetPerPersonRef}
-                            name="country"
-                            id="country"
-                        >
-                            <option>-- Select budget -- </option>
-                            <option value="$2000">$2,000</option>
-                            <option value="$3000">$3,000</option>
-                            <option value="$4000">$4,000</option>
-                            <option value="$5000">$5,000</option>
-                            <option value="$6000">$6,000</option>
-                        </select>
+                            type="text"
+                            name="budget"
+                            id="budget"
+                        />
                     </div>
                 </div>
                 <div className={styles['form-actions']}>
