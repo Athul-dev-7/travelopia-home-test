@@ -43,7 +43,7 @@ const BookingForm = () => {
 
     return (
         <div className={styles.container}>
-            <h1>Booking Form</h1>
+            <h1 className={styles.title}>Booking Form</h1>
             <form onSubmit={submitHandler} className={styles.form}>
                 <div className={styles['control-group']}>
                     <div className={styles['form-control']}>
@@ -53,6 +53,7 @@ const BookingForm = () => {
                             type="text"
                             name="firstName"
                             id="firstName"
+                            required
                         />
                     </div>
                     <div className={styles['form-control']}>
@@ -62,6 +63,7 @@ const BookingForm = () => {
                             type="text"
                             name="lastName"
                             id="lastName"
+                            required
                         />
                     </div>
                     <div className={styles['form-control']}>
@@ -71,6 +73,7 @@ const BookingForm = () => {
                             type="email"
                             name="email"
                             id="email"
+                            required
                         />
                     </div>
                 </div>
@@ -81,8 +84,9 @@ const BookingForm = () => {
                             ref={countryToVisitRef}
                             name="country"
                             id="country"
+                            required
                         >
-                            <option>-- Select city -- </option>
+                            <option hidden></option>
                             <option value="Africa">Africa</option>
                             <option value="India">India</option>
                             <option value="Europe">Europe</option>
@@ -96,6 +100,7 @@ const BookingForm = () => {
                             min={1}
                             name="travelers"
                             id="travelers"
+                            required
                         />
                     </div>
                     <div className={styles['form-control']}>
@@ -107,6 +112,7 @@ const BookingForm = () => {
                             type="text"
                             name="budget"
                             id="budget"
+                            required
                         />
                     </div>
                 </div>
