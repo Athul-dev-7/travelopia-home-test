@@ -60,7 +60,6 @@ router.post(
         .withMessage('The currency should be in dollars'),
     async function (req, res) {
         try {
-            // console.log(req.body);
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
                 return res.status(400).json({
@@ -85,7 +84,7 @@ router.post(
             } else {
                 return res
                     .status(400)
-                    .json({ message: 'some thing went wrong' });
+                    .json({ message: 'something went wrong' });
             }
         } catch (error) {
             return res.status(500).json({ error: `${error.message}` });
