@@ -1,9 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './bookingForm.module.css';
 import { Link } from 'react-router-dom';
 import { bookJourney } from '../../service/api';
 
 const BookingForm = () => {
+    const [bookingSuccess, setBookingSuccess] = useState(false);
+    const [bookingError, setBookingError] = useState(false);
     const firstNameRef = useRef();
     const lastNameRef = useRef();
     const emailRef = useRef();
@@ -25,7 +27,16 @@ const BookingForm = () => {
 
         bookJourney({ ...enteredValues }).then((resp) => {
             if (resp.status === 201) {
-                console.log(resp);
+                setBookingError(false);
+                setBookingSuccess(true);
+                firstNameRef.current.value = '';
+                lastNameRef.current.value = '';
+                emailRef.current.value = '';
+                countryToVisitRef.current.value = '';
+                numberOfTravellersRef.current.value = '';
+                budgetPerPersonRef.current.value = '';
+            } else {
+                setBookingError(true);
             }
         });
     };
@@ -103,6 +114,12 @@ const BookingForm = () => {
                     <button>Submit</button>
                 </div>
             </form>
+            {bookingSuccess && (
+                <h2 className={styles['success-text']}>Booking Successful</h2>
+            )}
+            {bookingError && (
+                <h2 className={styles['error-text']}>Something went wrong</h2>
+            )}
             <Link to="/bookings" className={styles.link}>
                 Go to Booking List
             </Link>
