@@ -5,11 +5,12 @@
 html {
   font-family: 'Noto Sans JP', sans-serif;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   background-color: #3f3f3f;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 140%;
 }
